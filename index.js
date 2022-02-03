@@ -11,7 +11,7 @@ const progressContainer = document.querySelector('.progress-container');
 const progress = document.querySelector('.progress');
 
 //Songs arrs
-const songs = ["Don't Hurt Yourself","Don't Start Now","Way Down We Go"];
+const songs = ["Don't Hurt Yourself","Don't start now","Way Down We Go"];
 const artists = ['Beyonce', 'Dua Lipa','Kaleo'];
 
 //Default song
