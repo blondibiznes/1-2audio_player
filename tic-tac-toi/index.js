@@ -1,0 +1,58 @@
+const area = document.getElementById('area');
+let move = 0;
+let rezult = '';
+const contentWrapper = document.getElementById('content');
+const modalRezult = document.getElementById('modal-rezult-wrapper');
+const overlay = document.getElementById('overlay');
+const btnClose = document.getElementById('btn-close');
+
+area.addEventListener('click', e => {
+  if(e.target.className = 'box'){
+    move % 2 === 0 ? e.target.innerHTML = 'X' : e.target.innerHTML = 'O';
+    move++;
+    check();
+  }
+})
+
+
+function check() {
+  const boxes = document.getElementsByClassName('box');
+  const arr = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8], 
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+  for(let i = 0; i < arr.length; i++){
+    if(boxes[arr[i][0]].innerHTML == 'X' && boxes[arr[i][1]].innerHTML == 'X' && boxes[arr[i][2]].innerHTML == 'X'){
+        rezult = 'КРЕСТИКИ';
+        prepareRezalt(rezult);
+    }else if(boxes[arr[i][0]].innerHTML == 'O' && boxes[arr[i][1]].innerHTML == 'O' && boxes[arr[i][2]].innerHTML == 'O'){
+      rezult = 'НОЛИКИ';
+      prepareRezalt(rezult);
+    }else if(move === 9){
+      rezult = 'НИЧЬЯ';
+        prepareRezalt2(rezult);
+    }
+  }
+}
+
+function prepareRezalt(winner) {
+  contentWrapper.innerHTML = `ПОБЕДИЛИ ${winner}`;
+  modalRezult.style.display = 'block';
+}
+function prepareRezalt2(winner) {
+  contentWrapper.innerHTML = `ПОЗДРАВЛЯЮ У ВАС ${winner}`;
+  modalRezult.style.display = 'block';
+}
+
+function closeModal() {
+  modalRezult.style.display = 'none';
+  location.reload();
+}
+overlay.addEventListener('click', closeModal);
+btnClose.addEventListener('click', closeModal);
