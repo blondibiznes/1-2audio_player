@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'ComicSansMS'; 
-	src: url(/assets/fonts/ComicSansMS/ComicSansMS.ttf); 
+	src: url('./assets/fonts/ComicSansMS/ComicSansMS.ttf'); 
 }
 * {
   margin: 0;
