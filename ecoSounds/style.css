@@ -70,6 +70,7 @@ body {
   background-color: transparent;
   border: 0;  
   transition: 0.5s;
+  cursor: pointer;
 }
 .play.active {
   width: 180px;
