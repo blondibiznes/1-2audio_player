@@ -33,7 +33,7 @@ solovey.addEventListener('click',() => {
   deletClass();
   audio.src = "./assets/audio/solovey.mp3";
   listItems[0].classList.add('focus');
-  mainSection.style.backgroundImage = "url('/assets/img/solovey.jpg')";
+  mainSection.style.backgroundImage = "url('./assets/img/solovey.jpg')";
   playMusic();
 
 })
@@ -41,7 +41,7 @@ drozd.addEventListener('click',() => {
   deletClass();
   audio.src = "./assets/audio/drozd.mp3";
   listItems[1].classList.add('focus');
-  mainSection.style.backgroundImage = "url('/assets/img/drozd.jpg')";
+  mainSection.style.backgroundImage = "url('./assets/img/drozd.jpg')";
   playMusic();
   
 })
@@ -49,21 +49,21 @@ malinovka.addEventListener('click',() => {
   deletClass();
   audio.src = "./assets/audio/malinovka.mp3";
   listItems[2].classList.add('focus');
-  mainSection.style.backgroundImage = "url('/assets/img/malinovka.jpg')";
+  mainSection.style.backgroundImage = "url('./assets/img/malinovka.jpg')";
   playMusic();
 })
 javoronok.addEventListener('click',() => {
   deletClass();
   audio.src = "./assets/audio/javoronok.mp3";
   listItems[3].classList.add('focus');
-  mainSection.style.backgroundImage = "url('/assets/img/javoronok.jpg')";
+  mainSection.style.backgroundImage = "url('./assets/img/javoronok.jpg')";
   playMusic()
 })
 slavka.addEventListener('click',() => {
   deletClass();
   audio.src = "./assets/audio/slavka.mp3";
   listItems[4].classList.add('focus');
-  mainSection.style.backgroundImage = "url('/assets/img/slavka.jpg')";
+  mainSection.style.backgroundImage = "url('./assets/img/slavka.jpg')";
   playMusic();
 })
 //-------------------------------------
