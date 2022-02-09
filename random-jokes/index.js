@@ -30,7 +30,7 @@ function showData(data) {
     setTimeout(()=>{
       removeClasses();
       
-    },1500);
+    },1000);
 }  
 
  
