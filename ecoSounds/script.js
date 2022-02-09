@@ -1,13 +1,9 @@
 const play = document.querySelector('.play');
 const audio = document.querySelector('.audio');
-const solovey = document.querySelector('.solovey');
-const drozd = document.querySelector('.drozd');
-const malinovka = document.querySelector('.malinovka');
-const javoronok= document.querySelector('.javoronok');
-const slavka = document.querySelector('.slavka');
+const list = document.querySelector('.navbar__list');
 const listItems = document.querySelectorAll('.list-item');
 const mainSection = document.querySelector('.main-section');
-let index = 0;
+
 
 function isPlay() {
   const isPlaying = audio.classList.contains('play');
@@ -19,8 +15,7 @@ function isPlay() {
 
 }
 
-play.addEventListener('click',() => {
-  isPlay()});
+play.addEventListener('click',isPlay);
   
 function deletClass() {
   listItems.forEach((el) => {
@@ -28,44 +23,19 @@ function deletClass() {
   })
 }
 //-------------------------------------------------------
+function changeImageAudio(event) {
+   const bird = event.target.dataset.bird;
+   isPlay = false;
+   if(event.target.classList.contains('list-item')) {
+      deletClass();
+      mainSection.style.backgroundImage = `url(/assets/img/${bird}.jpg)`;
+      event.target.classList.add('focus');
+      audio.src = `./assets/audio/${bird}.mp3`;
+      playMusic();
+}
+}
+list.addEventListener('click', changeImageAudio);
 
-solovey.addEventListener('click',() => {
-  deletClass();
-  audio.src = "./assets/audio/solovey.mp3";
-  listItems[0].classList.add('focus');
-  mainSection.style.backgroundImage = "url('./assets/img/solovey.jpg')";
-  playMusic();
-
-})
-drozd.addEventListener('click',() => {
-  deletClass();
-  audio.src = "./assets/audio/drozd.mp3";
-  listItems[1].classList.add('focus');
-  mainSection.style.backgroundImage = "url('./assets/img/drozd.jpg')";
-  playMusic();
-  
-})
-malinovka.addEventListener('click',() => {
-  deletClass();
-  audio.src = "./assets/audio/malinovka.mp3";
-  listItems[2].classList.add('focus');
-  mainSection.style.backgroundImage = "url('./assets/img/malinovka.jpg')";
-  playMusic();
-})
-javoronok.addEventListener('click',() => {
-  deletClass();
-  audio.src = "./assets/audio/javoronok.mp3";
-  listItems[3].classList.add('focus');
-  mainSection.style.backgroundImage = "url('./assets/img/javoronok.jpg')";
-  playMusic()
-})
-slavka.addEventListener('click',() => {
-  deletClass();
-  audio.src = "./assets/audio/slavka.mp3";
-  listItems[4].classList.add('focus');
-  mainSection.style.backgroundImage = "url('./assets/img/slavka.jpg')";
-  playMusic();
-})
 //-------------------------------------
 
 
